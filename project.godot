@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="flappy"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="uid://bqs1r5r26y305"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scenes/GameManager.tscn"
 
 [display]
 
@@ -36,7 +40,7 @@ flap={
 
 [physics]
 
-2d/default_gravity=1225.0600000000004
+2d/default_gravity=1200.0
 
 [rendering]
 

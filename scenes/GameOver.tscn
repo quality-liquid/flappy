@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://c88i7nhoktoi2"]
+
+[ext_resource type="Script" uid="uid://dliurdwiuy7lh" path="res://scripts/ScrollingBackground.cs" id="1_qae0b"]
+[ext_resource type="Script" uid="uid://dap37elg2yee6" path="res://scripts/GameOver.cs" id="1_vuicl"]
+[ext_resource type="Texture2D" uid="uid://denjx76y4tndw" path="res://assets/desert_BG.png" id="2_vuicl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvctj"]
+font_size = 100
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_vuicl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 639.0
+offset_bottom = 361.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "  High Score: "
+
+[node name="HighScore" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "high"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Score: "
+
+[node name="CurrentScore" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "score here"
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = SubResource("LabelSettings_tvctj")
+
+[node name="label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Click anywhere to play again!"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ScrollingBackground" type="Node2D" parent="Background"]
+script = ExtResource("1_qae0b")
+
+[node name="Background1" type="Sprite2D" parent="Background/ScrollingBackground"]
+position = Vector2(400, 172)
+texture = ExtResource("2_vuicl")
+
+[node name="Background2" type="Sprite2D" parent="Background/ScrollingBackground"]
+position = Vector2(1233, 172)
+texture = ExtResource("2_vuicl")
